@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "minimum_chrome_version": "99",
+  "name": "ページ全体スクリーンショット",
+  "version": "1.0.0",
+  "description": "右クリックからページ全体を撮影し、PNGをクリップボードにコピーする。保存もダウンロードもしない。",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "scripting",
+    "notifications",
+    "clipboardWrite"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icon128.png"
+  }
+}
