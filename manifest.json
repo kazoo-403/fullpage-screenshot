@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "minimum_chrome_version": "99",
   "name": "ページ全体スクリーンショット",
-  "version": "1.0.0",
-  "description": "右クリックからページ全体を撮影し、PNGをクリップボードにコピーする。保存もダウンロードもしない。",
+  "version": "1.1.0",
+  "description": "右クリック・アイコン・ショートカットからページ全体を撮影し、PNGをクリップボードにコピーする。保存もダウンロードもしない。",
   "permissions": [
     "contextMenus",
     "activeTab",
@@ -11,6 +11,14 @@
     "notifications",
     "clipboardWrite"
   ],
+  "action": {
+    "default_title": "ページ全体をスクリーンショット"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+S" }
+    }
+  },
   "background": {
     "service_worker": "background.js"
   },

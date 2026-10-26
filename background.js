@@ -41,6 +41,14 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
   });
 });
 
+// 右クリックを潰しているページ向けの別経路。ツールバーのアイコンクリックと
+// ショートカット（manifest の _execute_action）の両方がここに来る。どちらも activeTab が付与される
+chrome.action.onClicked.addListener((tab) => {
+  startCapture({ pageUrl: tab && tab.url }, tab).catch((e) => {
+    notify("error", "実行できませんでした: " + errText(e));
+  });
+});
+
 async function startCapture(info, tab) {
   if (!tab || typeof tab.id !== "number") {
     notify("error", "対象のタブを特定できませんでした");
